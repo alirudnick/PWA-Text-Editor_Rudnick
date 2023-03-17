@@ -22,7 +22,7 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'Webpack Plugin'
+        title: 'J.A.T.E'
       }),
       new InjectManifest({
         swSrc: './src-sw.js',
@@ -30,13 +30,14 @@ module.exports = () => {
       }),
       new WebpackPwaManifest({
         // TODO: Create a manifest.json:
+        fingerprints: false,
         name: 'Just Another Text Editor',
-        short_name: 'jate',
+        short_name: 'J.A.T.E',
         description: 'My awesome Progressive Web App!',
         background_color: '#ffffff',
         crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
-        start_rl: './',
-        publicPath: './',
+        start_url: '/',
+        publicPath: '/',
         inject: true,
         icons: [
       {
